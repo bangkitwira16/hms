@@ -1,0 +1,13 @@
+<div class="p-4 pt-12">
+    <div class="flex justify-between items-center">
+        <form class="flex space-x-2" [formGroup]="assetsForm">
+            <cmp-input label="Search" placeholder="Input key" controlName="key" class="!text-black border-gray-input !pb-0"></cmp-input>
+            <cmp-button [text]="isSubmitting ? 'Submitting...' : 'Search'" (onClick)="getAssets(assetsForm.get('key')?.value || '')"></cmp-button>
+        </form>
+        <div class="flex space-x-2">
+            <cmp-button text="Download" icon="download" (onClick)="downloadCsv()"></cmp-button>
+            <cmp-button text="Add Asset" class="bg-green-600" (onClick)="openForm()"></cmp-button>
+        </div>
+    </div>
+    <cmp-asset-table *ngIf="assets.length" [assets]="assets" (selectedData)="onClickRow($event)"></cmp-asset-table>
+</div>
