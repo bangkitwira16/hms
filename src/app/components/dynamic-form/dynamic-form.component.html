@@ -1,0 +1,22 @@
+<form [formGroup]="dynamicForm" *ngIf="formLength>0">
+    <ng-container *ngFor="let form of formData">
+        <div [ngSwitch]="form.type">
+            <div *ngSwitchCase="'text'">
+                <cmp-input [disabled]="form.disabled || false" [type]="form.type" [label]="form.label"
+                    [controlName]="setControl(form.name)">
+                </cmp-input>
+            </div>
+            <div *ngSwitchCase="'select'">
+                <cmp-select [label]="form.label" [controlName]="setControl(form.name)"
+                    [options]="form?.options || []"></cmp-select>
+            </div>
+            <div *ngSwitchCase="'number'">                
+                <cmp-input *ngIf="!form.disabled"[disabled]="form.disabled || false" [type]="form.type" [label]="form.label"
+                    [controlName]="setControl(form.name)">
+                </cmp-input>
+            </div>
+        </div>
+    </ng-container>
+    <cmp-button class="!bg-green-600 float-right" [text]="isSubmitting ? 'Saving...' : 'Save'" [disabled]="dynamicForm.invalid" (onClick)="submit()"></cmp-button>
+    <cmp-button *ngIf="isEdit" class="!bg-red-600 float-right mr-3" [text]="'Delete'" (onClick)="delete()"></cmp-button>
+</form>
