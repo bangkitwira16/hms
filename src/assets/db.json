@@ -1,0 +1,113 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "fullname": "Bangkit Wiramahendra",
+      "username": "bangkit",
+      "password": "admin123",
+      "role": "admin",
+      "created at": "2023-03-15"
+    },
+    {
+      "id": 2,
+      "fullname": "Admin Store",
+      "username": "admin",
+      "password": "admin123!",
+      "role": "admin",
+      "created at": "2023-03-15"
+    }
+  ],
+  "spareparts": [
+    {
+      "id": 1,
+      "sparepartName": "Engkol",
+      "type": "Accesories",
+      "locationId": 2,
+      "modelNumber": "SP-123",
+      "manufacturer": "Bandung",
+      "quantity": 3,
+      "currentStatus": "low"
+    },
+    {
+      "id": 2,
+      "sparepartName": "Obeng",
+      "quantity": 0,
+      "type": "Accesories",
+      "locationId": 2,
+      "modelNumber": "SP-124",
+      "manufacturer": "Bandung",
+      "currentStatus": "empty"
+    },
+    {
+      "id": 4,
+      "sparepartName": "Piring",
+      "type": "rumah",
+      "locationId": 4,
+      "modelNumber": "pr-123",
+      "manufacturer": "Jakarta",
+      "quantity": "10",
+      "currentStatus": "sufficient",
+      "created_at": "2023-03-30"
+    }
+  ],
+  "assets": [
+    {
+      "id": 2,
+      "assetName": "Kapak Elang",
+      "type": "Accesories",
+      "serialNumber": "SN-125",
+      "locationId": 2,
+      "modelNumber": "SP-124",
+      "manufacturer": "Kudus",
+      "currentStatus": "maintenance"
+    },
+    {
+      "id": 3,
+      "assetName": "Kipas",
+      "type": "pendingin",
+      "serialNumber": "kps-123",
+      "locationId": 2,
+      "modelNumber": "md-123",
+      "manufacturer": "Bandung",
+      "currentStatus": "running",
+      "created_at": "2023-03-29"
+    }
+  ],
+  "history": [
+    {
+      "id": 2,
+      "assetId": 2,
+      "configId": 2,
+      "sparepartId": 2,
+      "userId": 2,
+      "details": "Pembaharuan perangkat kapak masih terkendala",
+      "created_at": "2015-12-1"
+    }
+  ],
+  "locations": [
+    {
+      "id": 1,
+      "locationName": "Bandung",
+      "address": "Jalan Dago",
+      "created_at": "2015-12-1"
+    },
+    {
+      "id": 2,
+      "locationName": "Jakarta",
+      "address": "Duren Sawit",
+      "created_at": "2015-12-1"
+    },
+    {
+      "id": 3,
+      "locationName": "Surabaya",
+      "address": "Rungkut",
+      "created_at": "2015-12-1"
+    },
+    {
+      "id": 4,
+      "locationName": "Kudus",
+      "address": "kudus",
+      "created_at": "2015-12-1"
+    }
+  ]
+}

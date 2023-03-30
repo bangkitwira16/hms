@@ -1,10 +1,14 @@
-# Spareparts
+# Hardware Managed Service (HMS)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.10.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.10. Using `Angular Material` and `Tailwind` for UI Component and styling, and use `json-server` as database and API service.
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+
+## Start Database
+
+Run `npm run start-db` to start `json-server` and you can take a look the json files inside `assets/db.json` for login you can take a look at `users` property for username and password inside the json files.
 
 ## Code scaffolding
 
