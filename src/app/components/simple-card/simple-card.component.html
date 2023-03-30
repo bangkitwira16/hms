@@ -1,0 +1,10 @@
+<mat-card [class]="class">
+    <mat-card-header *ngIf="title">
+        <mat-card-title>{{title}}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content [class]="contentClass">
+        <ng-container *ngTemplateOutlet="templateRef;">
+
+        </ng-container>
+    </mat-card-content>
+</mat-card>

@@ -1,0 +1,4 @@
+<button [class]="class" mat-raised-button [disabled]="disabled" (click)="onClick.emit()">
+    <mat-icon *ngIf="icon">{{icon}}</mat-icon>
+    {{text}}
+</button>
