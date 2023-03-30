@@ -1,0 +1,20 @@
+<div class="sidebar">
+    <div class="avatar-ctn p-10">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJsI-A1jouXWhTiragizrRkXk7c9VdoFIaWHhngNjA&s"
+            alt="">
+        <h3 class="text-white font-bold !mt-3">{{user?.fullname}}</h3>
+        <button mat-icon-button aria-label="Example icon button with a heart icon" (click)="navigateHome()">
+            <mat-icon>home</mat-icon>
+        </button>
+        <button mat-icon-button aria-label="Example icon button with a heart icon" (click)="loggedOut()">
+            <mat-icon>logout</mat-icon>
+        </button>
+    </div>
+    <div class="mt-20">
+        <div *ngFor="let menu of sidebarMenu" class="!mx-auto  w-10/12 mb-3">
+            <button mat-button (click)="toggle(menu)" class="sidebar-menu w-full">
+                {{ menu.name }}
+            </button>
+        </div>
+    </div>
+</div>

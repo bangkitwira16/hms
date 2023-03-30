@@ -1,0 +1,9 @@
+<cmp-table id="spareparts-table" [columns]="assetCol" [dataSource]="spareparts" (selectedData)="rowClick($event)">
+    <ng-template #templateRef let-data="data" let-index="index" let-allData="allData">
+        <ng-container *ngIf="index===7">
+            <cmp-button [text]="data === 'low' ? '<3': data"
+                [class]="allData.currentStatus === 'low' ? 'bg-orange-400 capitalize' : allData.currentStatus === 'empty' ? 'bg-red-500 capitalize' : 'bg-green-500 capitalize'">
+            </cmp-button>
+        </ng-container>
+    </ng-template>
+</cmp-table>

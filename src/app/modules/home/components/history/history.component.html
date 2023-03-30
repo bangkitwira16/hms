@@ -1,0 +1,22 @@
+<div class="flex flex-col">
+    <h2 class="text-center">History</h2>
+    <form class="mb-3 flex space-x-2" [formGroup]="historyForm">
+        <cmp-input label="Search" placeholder="Input key" controlName="key" class="!text-black border-gray-input !pb-0"></cmp-input>
+        <cmp-button [text]="isSubmitting ? 'Submitting...' : 'Search'" (onClick)="submit()"></cmp-button>
+    </form>
+    <cmp-table *ngIf="history.length" [dataSource]="history" [columns]="historyCol">
+        <ng-template #templateRef let-data="data" let-index="index" let-allData="allData">
+            <ng-container *ngIf="index===2">
+                <cmp-button [text]="data"
+                    [class]="allData.currentStatus === 'maintenance' ? 'bg-orange-400 capitalize' : 'bg-red-500 capitalize'">
+                </cmp-button>
+            </ng-container>
+        </ng-template>
+    </cmp-table>
+    <ng-container *ngIf="!history.length">
+        <div class="text-center">
+            No Data
+        </div>
+    </ng-container>
+    
+</div>

@@ -1,0 +1,28 @@
+<div class="grid grid-cols-2 gap-4 p-4">
+    <div class="flex flex-col">
+        <h2 class="text-center">Empty Spare Parts</h2>
+        <cmp-table id="sparepart-table" *ngIf="emptySpareparts.length" [dataSource]="emptySpareparts" [columns]="emptySparepartsCol">
+            <ng-template #templateRef let-data="data" let-index="index" let-allData="allData">
+                <ng-container *ngIf="index===2">
+                    <cmp-button [text]="data === 0 ? allData.currentStatus: '<' + data"
+                        [class]="allData.currentStatus === 'low' ? 'bg-orange-400' : 'bg-red-500'"></cmp-button>
+                </ng-container>
+            </ng-template>
+        </cmp-table>
+    </div>
+    <div class="flex flex-col">
+        <h2 class="text-center">Inactive Assets</h2>
+        <cmp-table id="inactive-assets-table" *ngIf="inactiveAssets.length" [dataSource]="inactiveAssets" [columns]="inactiveAssetsCol">
+            <ng-template #templateRef let-data="data" let-index="index" let-allData="allData">
+                <ng-container *ngIf="index===2">
+                    <cmp-button [text]="data"
+                        [class]="allData.currentStatus === 'maintenance' ? 'bg-orange-400 capitalize' : 'bg-red-500 capitalize'">
+                    </cmp-button>
+                </ng-container>
+            </ng-template>
+        </cmp-table>
+    </div>
+</div>
+<div class="w-full p-4">
+    <cmp-history [isSubmitting]="isSubmitting" [history]="history" (onSubmit)="getHistory($event)"></cmp-history>
+</div>
