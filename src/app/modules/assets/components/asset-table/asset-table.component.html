@@ -1,0 +1,9 @@
+<cmp-table id="asset-table" [columns]="assetCol" [dataSource]="assets" (selectedData)="rowClick($event)">
+    <ng-template #templateRef let-data="data" let-index="index" let-allData="allData">
+        <ng-container *ngIf="index===7">
+            <cmp-button [text]="data"
+                [class]="allData.currentStatus === 'maintenance' ? 'bg-orange-400 capitalize' : allData.currentStatus === 'stopped' ? 'bg-red-500 capitalize' : 'bg-green-500 capitalize'">
+            </cmp-button>
+        </ng-container>
+    </ng-template>
+</cmp-table>
