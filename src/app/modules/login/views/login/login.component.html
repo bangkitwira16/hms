@@ -1,0 +1,11 @@
+<div class="h-screen flex">
+    <cmp-simple-card class="w-7/12/12 mx-auto my-auto" contentClass="px-12 py-10">
+        <ng-template #templateRef>
+            <form class="mb-3" [formGroup]="loginForm">
+                <cmp-input label="Username" controlName="username"></cmp-input>
+                <cmp-input class="mt-1" label="Password" type="password" controlName="password"></cmp-input>
+            </form>
+            <cmp-button [disabled]="loginForm.invalid || isSubmitting" (onClick)="submit()" text="Login"></cmp-button>
+        </ng-template>
+    </cmp-simple-card>
+</div>
