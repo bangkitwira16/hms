@@ -39,7 +39,6 @@ export class LoginComponent implements OnInit {
       }
     this.isSubmitting= false
     }, err => {
-      console.error(err)
       this.isSubmitting= false
     })
   }

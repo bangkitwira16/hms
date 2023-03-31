@@ -36,7 +36,6 @@ export class DynamicFormComponent implements OnInit {
       if (data.value)
         this.dynamicForm.get(data.name)?.setValue(data.value)
     })
-    console.log(this.formData)
     this.formLength = Object.keys(this.dynamicForm.value).length;
   }
 

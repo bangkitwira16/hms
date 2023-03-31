@@ -44,7 +44,6 @@ export class SidebarComponent implements OnInit {
 
   private getUser() {
     this.user = this.baseService.getUser()
-    console.log(this.user)
   }
 
   public navigateHome() {

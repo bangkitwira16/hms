@@ -21,7 +21,6 @@ export class ToolbarComponent implements OnInit {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
         this.activeRoute = event.url.split('/').join('');
-        console.log( this.activeRoute, 'ini')
       }
     });
   }

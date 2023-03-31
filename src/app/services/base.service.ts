@@ -57,7 +57,6 @@ export class BaseService {
           param[key] !== ''
         ) {
           if (Array.isArray(param[key])) {
-            console.log(key, param[key]);
             for (let i in param[key]) {
               result = result.append(key, param[key][i]);
             }
@@ -71,7 +70,6 @@ export class BaseService {
             (result = result.set(key, param[key] === null ? '' : param[key]))
         );
     }
-    console.log(result);
 
     return result;
   }
