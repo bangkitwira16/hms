@@ -51,7 +51,6 @@ export class AssetTableComponent implements OnInit {
   }
   
   ngOnInit(): void {
-    console.log(this.assets)
   }
 
   rowClick(row: any) {

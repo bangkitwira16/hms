@@ -122,7 +122,6 @@ export class SparepartComponent implements OnInit {
   }
 
   public onClickRow(row: any) {
-    console.log(row);
     const transformRow = {
       ...row,
       manufacturer: this.locations.filter(
@@ -156,14 +155,12 @@ export class SparepartComponent implements OnInit {
         this.dataService.onSubmitting(false);
       },
       (err) => {
-        console.log(err);
         this.dataService.onSubmitting(false);
       }
     );
   }
 
   private deleteSparepart(id: any) {
-    console.log('sini', id);
     this.baseService.deleteData(`${sparePartsApiPath}/${id}`).subscribe((res) => {
       this.getSparepart();
       this.dialog.closeAll();
